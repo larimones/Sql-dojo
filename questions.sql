@@ -11,7 +11,7 @@ select * from empregados e where salario >  (select salario from empregados b wh
 
 
 2 Listar o maior salario de cada departamento (pode ser usado o group by)
-
+select MAX(salario) from empregados group by dep_id
 
 
 3 Listar o nome do funcionario com maior salario dentro de cada departamento (pode ser usado o IN)
