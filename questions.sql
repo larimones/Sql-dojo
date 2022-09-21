@@ -1,10 +1,13 @@
 1  Listar os empregados (nomes) que tem salário maior que seu chefe
+select * from empregados e where salario >  (select salario from empregados b where b.emp_id = e.supervisor_id ); 
 
+ emp_id | dep_id | supervisor_id |  nome   | salario 
+--------+--------+---------------+---------+---------
+      4 |      1 |             1 | Maria   |    9500
+      6 |      1 |             1 | Claudia |   10000
+      7 |      4 |             1 | Ana     |   12200
+      8 |      2 |             5 | Luiz    |    8000
 
---  empregado | chefe | emp sal | chef sal 
--- -----------+-------+---------+----------
---  Maria     | Jose  | 9500    | 8000
---  Luiz      | Pedro | 8000    | 7500
 
 
 2 Listar o maior salario de cada departamento (pode ser usado o group by)
