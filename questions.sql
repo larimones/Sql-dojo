@@ -15,7 +15,12 @@ select MAX(salario) from empregados group by dep_id
 
 
 3 Listar o nome do funcionario com maior salario dentro de cada departamento (pode ser usado o IN)
+select 
 
+ ROW_NUMBER() OVER(PARTITION BY MAX(salario) order by dep_id) as salario,
+ nome
+ 
+ from empregados
 
 --  dep_id | nome  | salario 
 -- --------+-------+---------
